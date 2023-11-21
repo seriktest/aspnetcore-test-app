@@ -11,6 +11,7 @@ public class CatalogContext : ICatalogContext
     {
         var client = new MongoClient(conf.GetValue<string>("DatabaseSettings:ConnectionString"));
         var database = client.GetDatabase(conf.GetValue<string>("DatabaseSettings:DatabaseName"));
+        
         Products = database.GetCollection<Product>(conf.GetValue<string>("DatabaseSettings:CollectionName"));
         CatalogContextSeed.SeedData(Products);
     }
