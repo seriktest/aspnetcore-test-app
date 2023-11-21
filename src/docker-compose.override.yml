@@ -1,7 +1,7 @@
 version: '3.4'
 
 services:
-  catalofdb:
+  catalogdb:
     container_name: catalogdb
     restart: always
     ports:
@@ -13,7 +13,6 @@ services:
     container_name: catalog.api
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=https://+:443;http://+:80
       - "DatabaseSettings:ConnectionString=mongodb://catalogdb:27017"    
     depends_on:
       - catalogdb
