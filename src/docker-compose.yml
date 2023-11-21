@@ -12,4 +12,3 @@ services:
       dockerfile: Services/Catalog/Catalog.API/Dockerfile
 volumes:    
   mongo_data:
-
