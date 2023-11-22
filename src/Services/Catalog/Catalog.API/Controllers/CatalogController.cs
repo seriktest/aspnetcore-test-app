@@ -10,6 +10,7 @@ namespace Catalog.API.Controllers;
 public class CatalogController : ControllerBase
 {
     private readonly IProductRepository _repository;
+
     private readonly ILogger<CatalogController> _logger;
 
     public CatalogController(IProductRepository repository, ILogger<CatalogController> logger)
@@ -22,7 +23,7 @@ public class CatalogController : ControllerBase
     [ProducesResponseType(typeof(IEnumerable<Product>), (int)HttpStatusCode.OK)]
     public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
     {
-        var products = await _repository.GetProducts();
+        var products = await _repository.GetProductsAsync().ConfigureAwait(false);
         return Ok(products);
     }
 
@@ -31,7 +32,7 @@ public class CatalogController : ControllerBase
     [ProducesResponseType(typeof(Product), (int)HttpStatusCode.OK)]
     public async Task<ActionResult<Product>> GetProductById(string id)
     {
-        var product = await _repository.GetProduct(id);
+        var product = await _repository.GetProductAsync(id).ConfigureAwait(false);
         if (product == null)
         {
             _logger.LogError("Product with id: {Id}, not found", id);
@@ -40,7 +41,6 @@ public class CatalogController : ControllerBase
         else
         {
             return Ok(product);
-            
         }
     }
 
@@ -49,7 +49,7 @@ public class CatalogController : ControllerBase
     [ProducesResponseType(typeof(IEnumerable<Product>), (int)HttpStatusCode.OK)]
     public async Task<ActionResult<IEnumerable<Product>>> GetProductByCategory(string category)
     {
-        var products = await _repository.GetProductByCategory(category);
+        var products = await _repository.GetProductByCategoryAsync(category).ConfigureAwait(false);
         return Ok(products);
     }
 
@@ -58,7 +58,7 @@ public class CatalogController : ControllerBase
     [ProducesResponseType(typeof(IEnumerable<Product>), (int)HttpStatusCode.OK)]
     public async Task<ActionResult<IEnumerable<Product>>> GetProductByName(string name)
     {
-        var products = await _repository.GetProductByName(name);
+        var products = await _repository.GetProductByNameAsync(name).ConfigureAwait(false);
         return Ok(products);
     }
 
@@ -66,7 +66,7 @@ public class CatalogController : ControllerBase
     [ProducesResponseType(typeof(Product), (int)HttpStatusCode.OK)]
     public async Task<ActionResult<Product>> CreateProduct([FromBody] Product product)
     {
-        await _repository.CreateProduct(product);
+        await _repository.CreateProductAsync(product).ConfigureAwait(false);
         return CreatedAtRoute("GetProduct", new { id = product.Id }, product);
     }
 
@@ -74,13 +74,13 @@ public class CatalogController : ControllerBase
     [ProducesResponseType(typeof(Product), (int)HttpStatusCode.OK)]
     public async Task<IActionResult> UpdateProduct([FromBody] Product product)
     {
-        return Ok(await _repository.UpdateProduct(product).ConfigureAwait(false));
+        return Ok(await _repository.UpdateProductAsync(product).ConfigureAwait(false));
     }
 
     [HttpDelete("{id:length(24)}", Name = "DeleteProduct")]
     [ProducesResponseType(typeof(Product), (int)HttpStatusCode.OK)]
     public async Task<IActionResult> DeleteProductById(string id)
     {
-        return Ok(await _repository.DeleteProduct(id).ConfigureAwait(false));
+        return Ok(await _repository.DeleteProductAsync(id).ConfigureAwait(false));
     }
 }
