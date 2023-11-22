@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Basket.API.Controllers; 
 
 [ApiController]
-[Route("api/v1/[controller]")]
+[Route("api/v1/[controller]/{userName}")]
 public class BasketController : ControllerBase {
     private readonly IBasketRepository _repository;
     
@@ -14,7 +14,7 @@ public class BasketController : ControllerBase {
         _repository = repository;
     }
     
-    [HttpGet("{userName}", Name = "GetBasket")]
+    [HttpGet("", Name = "GetBasket")]
     [ProducesResponseType(typeof(ShoppingCart), (int)HttpStatusCode.OK)]
     public  async Task<ActionResult<ShoppingCart>> GetBasket(string userName) {
         var basket = await _repository.GetBasket(userName);
@@ -28,7 +28,7 @@ public class BasketController : ControllerBase {
         return Ok(updatedBasket);
     }
     
-    [HttpDelete("{userName}", Name = "DeleteBasket")]
+    [HttpDelete("", Name = "DeleteBasket")]
     [ProducesResponseType(typeof(void), (int)HttpStatusCode.OK)]
     public async Task DeleteBasket(string userName) {
         await _repository.DeleteBasket(userName);
