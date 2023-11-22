@@ -7,6 +7,7 @@
         <UserSecretsId>2825c226-c3d6-4d35-b34c-52234b79bfaf</UserSecretsId>
         <DockerfileContext>..\..\..</DockerfileContext>
         <DockerComposeProjectPath>..\..\..\docker-compose.dcproj</DockerComposeProjectPath>
+        <LangVersion>preview</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>
