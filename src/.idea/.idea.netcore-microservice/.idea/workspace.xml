@@ -16,9 +16,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1c7a363-5fc9-4228-bfab-e2016e5ad518" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.netcore-microservice/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.netcore-microservice/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/Discount/Discount.API/Discount.API.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Discount/Discount.API/Discount.API.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/Discount/Discount.API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Discount/Discount.API/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/Discount/Discount.API/Controllers/DiscountController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Discount/Discount.API/Controllers/DiscountController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +27,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4a92aeb773bbd9376b6b5175e2ce681e6d889e3b57b8bee79a802c9079/CreatedAtRoute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/81a3bcf4bb6aa5e62a9839f9cfeeba6126496f4fa07d1e57b27a5176e42525/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -264,7 +263,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700596711874</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="error">
+      <option name="closed" value="true" />
+      <created>1700682211668</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1700682211668</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,6 +285,7 @@
     <MESSAGE value="add repository" />
     <MESSAGE value="add CRUD" />
     <MESSAGE value="fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+    <MESSAGE value="error" />
+    <option name="LAST_COMMIT_MESSAGE" value="error" />
   </component>
 </project>

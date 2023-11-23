@@ -8,7 +8,7 @@ namespace Discount.API.Controllers
 {
     [ApiController]
     [Route("api/v1/[controller]")]
-    public class DiscountController
+    public class DiscountController : ControllerBase
     {
         private readonly IDiscountRepository _repository;
 
@@ -22,7 +22,7 @@ namespace Discount.API.Controllers
         public async Task<ActionResult<Coupon>> GetDiscount(string productName)
         {
             var coupon = await _repository.GetDiscount(productName).ConfigureAwait(false);
-            return Ok(coupon).configureAwait(false);
+            return Ok(coupon);
         }
 
         [HttpPost]
@@ -30,7 +30,7 @@ namespace Discount.API.Controllers
         public async Task<ActionResult<Coupon>> CreateDiscount([FromBody] Coupon coupon)
         {
             await _repository.CreateDiscount(coupon);
-            return CreatedAtRoute("GetDiscount", new { productName = coupon.ProductName }, coupon).configureAwait(false);
+            return CreatedAtRoute(nameof(GetDiscount), new { productName = coupon.ProductName }, coupon);
         }
 
 
@@ -38,14 +38,14 @@ namespace Discount.API.Controllers
         [ProducesResponseType(typeof(Coupon), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<Coupon>> UpdateDiscount([FromBody] Coupon coupon)
         {
-            return Ok(await _repository.UpdateDiscount(coupon)).configureAwait(false);
+            return Ok(await _repository.UpdateDiscount(coupon));
         }
 
         [HttpDelete("{productName}", Name = "DeleteDiscount")]
         [ProducesResponseType(typeof(Coupon), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<Coupon>> DeleteDiscount(string productName)
         {
-            return Ok(await _repository.DeleteDiscount(productName)).configureAwait(false);
+            return Ok(await _repository.DeleteDiscount(productName));
         }
     }
 }
