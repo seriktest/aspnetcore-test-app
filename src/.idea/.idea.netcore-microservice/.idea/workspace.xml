@@ -29,6 +29,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4a92aeb773bbd9376b6b5175e2ce681e6d889e3b57b8bee79a802c9079/CreatedAtRoute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/81a3bcf4bb6aa5e62a9839f9cfeeba6126496f4fa07d1e57b27a5176e42525/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Rider/AspNetMicroservices/src/Services/Discount/Discount.API/Controllers/DiscountController.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -166,6 +167,7 @@
       <workItem from="1700596375570" duration="124000" />
       <workItem from="1700596618510" duration="22000" />
       <workItem from="1700596692476" duration="66000" />
+      <workItem from="1700754717340" duration="379000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -271,7 +273,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700682211668</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="fix errors">
+      <option name="closed" value="true" />
+      <created>1700755048528</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1700755048528</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,6 +296,7 @@
     <MESSAGE value="add CRUD" />
     <MESSAGE value="fix" />
     <MESSAGE value="error" />
-    <option name="LAST_COMMIT_MESSAGE" value="error" />
+    <MESSAGE value="fix errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix errors" />
   </component>
 </project>
