@@ -1,6 +1,5 @@
 ﻿using Dapper;
 using Discount.API.Entities;
-using Microsoft.AspNetCore.Mvc;
 using Npgsql;
 
 namespace Discount.API.Repositories;
@@ -13,7 +12,7 @@ public class DiscountRepository : IDiscountRepository
     {
         _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
     }
-    
+
     public async Task<Coupon> GetDiscount(string productName)
     {
         await using var connection = new NpgsqlConnection
@@ -21,7 +20,7 @@ public class DiscountRepository : IDiscountRepository
 
         var coupon = await connection.QueryFirstOrDefaultAsync<Coupon>
             ("SELECT * FROM Coupon WHERE ProductName = @ProductName",
-                new {ProductName = productName}).ConfigureAwait(false);
+             new { ProductName = productName });
         if (coupon == null)
         {
             return new Coupon
@@ -31,6 +30,7 @@ public class DiscountRepository : IDiscountRepository
                 Description = "No Discount Description"
             };
         }
+
         return coupon;
     }
 
@@ -42,7 +42,7 @@ public class DiscountRepository : IDiscountRepository
         var affected =
             await connection.ExecuteAsync
             ("INSERT INTO Coupon (ProductName, Description, Amount) VALUES (@ProductName, @Description, @Amount)",
-                new { coupon.ProductName, coupon.Description, coupon.Amount }).ConfigureAwait(false);
+                new { coupon.ProductName, coupon.Description, coupon.Amount });
 
         return affected != 0;
     }
@@ -53,8 +53,8 @@ public class DiscountRepository : IDiscountRepository
             (_configuration.GetValue<string>("DatabaseSettings:ConnectionString"));
 
         var affected = await connection.ExecuteAsync
-        ("UPDATE Coupon SET ProductName=@ProductName, Description = @Description, Amount = @Amount WHERE Id = @Id",
-            new { coupon.ProductName, coupon.Description, coupon.Amount }).ConfigureAwait(false);
+        ("UPDATE Coupon SET ProductName = @ProductName, Description = @Description, Amount = @Amount WHERE Id = @Id",
+            new { coupon.ProductName, coupon.Description, coupon.Amount });
 
         return affected != 0;
     }
@@ -66,7 +66,7 @@ public class DiscountRepository : IDiscountRepository
 
         var affected = await connection.ExecuteAsync
         ("DELETE FROM Coupon WHERE ProductName = @ProductName",
-            new { ProductName = productName }).ConfigureAwait(false);
+            new { ProductName = productName });
 
         return affected != 0;
     }
