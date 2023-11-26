@@ -1,3 +1,5 @@
+using Basket.API.GrpcServices;
+
 namespace Basket.API.Controllers
 {
     using System.Net;
@@ -7,24 +9,20 @@ namespace Basket.API.Controllers
 
     using Microsoft.AspNetCore.Mvc;
 
-    /// <summary>
-    /// The basket controller.
-    /// </summary>
+   
     [ApiController]
     [Route("api/v1/[controller]/{userName}")]
     internal class BasketController : ControllerBase
     {
-        /// <summary>
-        /// The _repository.
-        /// </summary>
         private readonly IBasketRepository _repository;
+        private readonly  DiscountGrpcService _discountGrpcService;
 
-        public BasketController(IBasketRepository repository)
-        {
-            _repository = repository;
+        public BasketController(IBasketRepository repository, DiscountGrpcService discountGrpcService) {
+            _repository = repository ?? throw new ArgumentNullException(nameof(repository));
+            _discountGrpcService = discountGrpcService ?? throw new ArgumentNullException(nameof(discountGrpcService));
         }
 
-        [HttpGet("", Name = "GetBasket")]
+        [HttpGet("username", Name = "GetBasket")]
         [ProducesResponseType(typeof(ShoppingCart), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<ShoppingCart>> GetBasket(string userName)
         {
@@ -36,8 +34,12 @@ namespace Basket.API.Controllers
         [ProducesResponseType(typeof(ShoppingCart), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<ShoppingCart>> UpdateBasket([FromBody] ShoppingCart basket)
         {
-            var updatedBasket = await _repository.UpdateBasketAsync(basket).ConfigureAwait(false);
-            return Ok(updatedBasket);
+            foreach (var item in basket.Items) {
+                var coupon = await _discountGrpcService.GetDiscount(item.ProductName);
+                item.Price -= coupon.Amount;
+            }
+            
+            return Ok(await _repository.UpdateBasketAsync(basket).ConfigureAwait(false));
         }
 
         [HttpDelete("", Name = "DeleteBasket")]
