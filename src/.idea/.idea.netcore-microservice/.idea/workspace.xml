@@ -19,9 +19,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1c7a363-5fc9-4228-bfab-e2016e5ad518" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.netcore-microservice/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.netcore-microservice/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.netcore-microservice/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.netcore-microservice/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/Basket/Basket.API/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Basket/Basket.API/Properties/launchSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/Basket/Basket.API/Controllers/BasketController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Basket/Basket.API/Controllers/BasketController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/Basket/Basket.API/GrpcServices/DiscountGrpcService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Basket/Basket.API/GrpcServices/DiscountGrpcService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/Basket/Basket.API/Repositories/BasketRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Basket/Basket.API/Repositories/BasketRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/Basket/Basket.API/Repositories/IBasketRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Basket/Basket.API/Repositories/IBasketRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Services/Discount/Discount.API/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Discount/Discount.API/Properties/launchSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.override.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.override.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -287,6 +292,10 @@
       <workItem from="1700980928761" duration="138000" />
       <workItem from="1700981094656" duration="15436000" />
       <workItem from="1701007073060" duration="1455000" />
+      <workItem from="1701012147205" duration="341000" />
+      <workItem from="1701013570284" duration="1203000" />
+      <workItem from="1701015023895" duration="1302000" />
+      <workItem from="1701098970898" duration="1427000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -443,24 +452,5 @@
     <MESSAGE value="add Grpc server service to Discount.API" />
     <MESSAGE value="docker-compose --build" />
     <option name="LAST_COMMIT_MESSAGE" value="docker-compose --build" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Services/Basket/Basket.API/GrpcServices/DiscountGrpcService.cs</url>
-          <line>11</line>
-          <properties documentPath="$PROJECT_DIR$/Services/Basket/Basket.API/GrpcServices/DiscountGrpcService.cs" initialLine="11" containingFunctionPresentation="method 'GetDiscount'">
-            <startOffsets>
-              <option value="426" />
-            </startOffsets>
-            <endOffsets>
-              <option value="427" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

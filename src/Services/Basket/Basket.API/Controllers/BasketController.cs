@@ -1,32 +1,30 @@
+
+using Basket.API.Entities;
 using Basket.API.GrpcServices;
+using Microsoft.AspNetCore.Mvc;
+using System.Net;
+using Basket.API.Repositories;
 
 namespace Basket.API.Controllers
 {
-    using System.Net;
-
-    using Entities;
-    using Repositories;
-
-    using Microsoft.AspNetCore.Mvc;
-
-   
     [ApiController]
-    [Route("api/v1/[controller]/{userName}")]
-    internal class BasketController : ControllerBase
+    [Route("api/v1/[controller]")]
+    public class BasketController : ControllerBase
     {
         private readonly IBasketRepository _repository;
-        private readonly  DiscountGrpcService _discountGrpcService;
+        private readonly DiscountGrpcService _discountGrpcService;
 
-        public BasketController(IBasketRepository repository, DiscountGrpcService discountGrpcService) {
+        public BasketController(IBasketRepository repository, DiscountGrpcService discountGrpcService)
+        {
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));
             _discountGrpcService = discountGrpcService ?? throw new ArgumentNullException(nameof(discountGrpcService));
         }
-
-        [HttpGet("username", Name = "GetBasket")]
+        
+        [HttpGet("{userName}", Name = "GetBasket")]
         [ProducesResponseType(typeof(ShoppingCart), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<ShoppingCart>> GetBasket(string userName)
         {
-            var basket = await _repository.GetBasketAsync(userName).ConfigureAwait(false);
+            var basket = await _repository.GetBasket(userName);
             return Ok(basket ?? new ShoppingCart(userName));
         }
 
@@ -34,19 +32,22 @@ namespace Basket.API.Controllers
         [ProducesResponseType(typeof(ShoppingCart), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<ShoppingCart>> UpdateBasket([FromBody] ShoppingCart basket)
         {
-            foreach (var item in basket.Items) {
+            // Communicate with Discount.Grpc and calculate latest prices of products into sc
+            foreach (var item in basket.Items)
+            {
                 var coupon = await _discountGrpcService.GetDiscount(item.ProductName);
                 item.Price -= coupon.Amount;
             }
-            
-            return Ok(await _repository.UpdateBasketAsync(basket).ConfigureAwait(false));
+
+            return Ok(await _repository.UpdateBasket(basket));
         }
 
-        [HttpDelete("", Name = "DeleteBasket")]
+        [HttpDelete("{userName}", Name = "DeleteBasket")]        
         [ProducesResponseType(typeof(void), (int)HttpStatusCode.OK)]
-        public Task DeleteBasket(string userName)
+        public async Task<IActionResult> DeleteBasket(string userName)
         {
-            return _repository.DeleteBasketAsync(userName);
+            await _repository.DeleteBasket(userName);
+            return Ok();
         }
     }
 }
