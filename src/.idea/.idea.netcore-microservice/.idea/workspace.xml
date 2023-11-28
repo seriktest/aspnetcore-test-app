@@ -21,14 +21,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1c7a363-5fc9-4228-bfab-e2016e5ad518" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Services/Ordering/Ordering.Application/Exceptions/NotFoundException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/Ordering/Ordering.Application/Exceptions/ValidationException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/Ordering/Ordering.Application/Features/Orders/Commands/DeleteOrder/DeleteOrderCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/Ordering/Ordering.Application/Features/Orders/Commands/DeleteOrder/DeleteOrderCommandHandler.cs" afterDir="false" />
+    <list default="true" id="f1c7a363-5fc9-4228-bfab-e2016e5ad518" name="Changes" comment="add exception on update handler">
+      <change afterPath="$PROJECT_DIR$/Services/Ordering/Ordering.Application/Behaviours/ValidationBehavior.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.netcore-microservice/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.netcore-microservice/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/Ordering/Ordering.Application/Contracts/Persistence/IAsyncRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Ordering/Ordering.Application/Contracts/Persistence/IAsyncRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/Ordering/Ordering.Application/Features/Orders/Commands/UpdateOrder/UpdateOrderCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Ordering/Ordering.Application/Features/Orders/Commands/UpdateOrder/UpdateOrderCommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/Ordering/Ordering.Application/Ordering.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Ordering/Ordering.Application/Ordering.Application.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,9 +35,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/27d29ac555574df6b9fe4cfebdc2a8d7d199584e5846579c257437f55df87191/IPipelineBehavior.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/34ff4a0f713e2bf2792a68c17f16e627d9162c3133b95be749eb257ac4f778/AbstractValidator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Services/Basket/Basket.API/Controllers/BasketController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://E:/Rider/AspNetMicroservices/src/Services/Ordering/Ordering.Application/Mappings/MappingProfile.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -343,7 +339,7 @@
       <workItem from="1701015023895" duration="1302000" />
       <workItem from="1701098970898" duration="1427000" />
       <workItem from="1701184262231" duration="4038000" />
-      <workItem from="1701198884872" duration="1881000" />
+      <workItem from="1701198884872" duration="2715000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -494,7 +490,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701188195028</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="add exception on update handler">
+      <option name="closed" value="true" />
+      <created>1701200799542</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1701200799542</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -517,6 +521,7 @@
     <MESSAGE value="docker-compose --build" />
     <MESSAGE value="order command" />
     <MESSAGE value="update order" />
-    <option name="LAST_COMMIT_MESSAGE" value="update order" />
+    <MESSAGE value="add exception on update handler" />
+    <option name="LAST_COMMIT_MESSAGE" value="add exception on update handler" />
   </component>
 </project>
