@@ -21,10 +21,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1c7a363-5fc9-4228-bfab-e2016e5ad518" name="Changes" comment="add exception on update handler">
-      <change afterPath="$PROJECT_DIR$/Services/Ordering/Ordering.Application/Behaviours/ValidationBehavior.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.netcore-microservice/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.netcore-microservice/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/Ordering/Ordering.Application/Ordering.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Ordering/Ordering.Application/Ordering.Application.csproj" afterDir="false" />
+    <list default="true" id="f1c7a363-5fc9-4228-bfab-e2016e5ad518" name="Changes" comment="ValidationBehavior">
+      <change afterPath="$PROJECT_DIR$/Services/Ordering/Ordering.Application/Behaviours/UnhandledException.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -339,7 +337,7 @@
       <workItem from="1701015023895" duration="1302000" />
       <workItem from="1701098970898" duration="1427000" />
       <workItem from="1701184262231" duration="4038000" />
-      <workItem from="1701198884872" duration="2715000" />
+      <workItem from="1701198884872" duration="3036000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -498,7 +496,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701200799542</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="ValidationBehavior">
+      <option name="closed" value="true" />
+      <created>1701201813345</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1701201813345</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -522,6 +528,7 @@
     <MESSAGE value="order command" />
     <MESSAGE value="update order" />
     <MESSAGE value="add exception on update handler" />
-    <option name="LAST_COMMIT_MESSAGE" value="add exception on update handler" />
+    <MESSAGE value="ValidationBehavior" />
+    <option name="LAST_COMMIT_MESSAGE" value="ValidationBehavior" />
   </component>
 </project>
