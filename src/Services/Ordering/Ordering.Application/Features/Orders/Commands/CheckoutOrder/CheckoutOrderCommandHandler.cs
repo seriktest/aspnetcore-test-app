@@ -8,16 +8,28 @@ using Ordering.Domain.Entities;
 
 namespace Ordering.Application.Features.Orders.Commands.CheckoutOrder;
 
-public class CheckoutOrderCommandHandler(IOrderRepository orderRepository,
-                                    IMapper mapper,
-                                    IEmailService emailService,
-                                    ILogger<CheckoutOrderCommandHandler> logger) : IRequestHandler<CheckoutOrderCommand, int>
-{
-    private readonly IOrderRepository _orderRepository = orderRepository ?? throw new ArgumentNullException(nameof(orderRepository));
-    private readonly IMapper _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
-    private readonly IEmailService _emailService = emailService ?? throw new ArgumentNullException(nameof(emailService));
-    private readonly ILogger<CheckoutOrderCommandHandler> _logger = logger ?? throw new ArgumentNullException(nameof(logger));
 
+
+public class CheckoutOrderCommandHandler : IRequestHandler<CheckoutOrderCommand, int>
+{
+    public CheckoutOrderCommandHandler(IOrderRepository orderRepository,
+        IMapper mapper,
+        IEmailService emailService,
+        ILogger<CheckoutOrderCommandHandler> logger) 
+    {
+        _orderRepository = orderRepository ?? throw new ArgumentNullException(nameof(orderRepository));
+        _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
+        _emailService = emailService ?? throw new ArgumentNullException(nameof(emailService));
+        _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+
+    }
+    
+    
+    private readonly IOrderRepository _orderRepository;
+    private readonly IMapper _mapper;
+    private readonly IEmailService _emailService;
+    private readonly ILogger<CheckoutOrderCommandHandler> _logger;
+    
     public async Task<int> Handle(CheckoutOrderCommand request, CancellationToken cancellationToken)
     {
         var orderEntity = _mapper.Map<Order>(request);
