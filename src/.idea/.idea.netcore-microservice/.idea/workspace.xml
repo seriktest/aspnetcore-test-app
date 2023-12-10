@@ -12,10 +12,10 @@
     <projectFile profileName="Ordering.API">Services/Ordering/Ordering.API/Ordering.API.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8304b1ce-8131-4c3f-8cb8-4cbc3c84fafa" name="Changes" comment="email service">
-      <change afterPath="$PROJECT_DIR$/Services/Ordering/Ordering.Infrastructure/InfrastructureServiceRegistration.cs" afterDir="false" />
+    <list default="true" id="8304b1ce-8131-4c3f-8cb8-4cbc3c84fafa" name="Changes" comment="di">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.netcore-microservice/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.netcore-microservice/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/Ordering/Ordering.API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Ordering/Ordering.API/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/Ordering/Ordering.API/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Ordering/Ordering.API/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/Ordering/Ordering.Infrastructure/InfrastructureServiceRegistration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Ordering/Ordering.Infrastructure/InfrastructureServiceRegistration.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,7 +209,7 @@
       <workItem from="1701583568315" duration="228000" />
       <workItem from="1701772477364" duration="662000" />
       <workItem from="1701854401452" duration="4488000" />
-      <workItem from="1702210798020" duration="5881000" />
+      <workItem from="1702210798020" duration="6837000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1701175050099</created>
@@ -239,7 +239,14 @@
       <option name="project" value="LOCAL" />
       <updated>1702215904633</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="di">
+      <created>1702216772875</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1702216772875</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,6 +260,7 @@
     <MESSAGE value="не понимаю конечно..." />
     <MESSAGE value="repo" />
     <MESSAGE value="email service" />
-    <option name="LAST_COMMIT_MESSAGE" value="email service" />
+    <MESSAGE value="di" />
+    <option name="LAST_COMMIT_MESSAGE" value="di" />
   </component>
 </project>
